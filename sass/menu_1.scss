@@ -1,0 +1,186 @@
+@import "./utils/_variables";
+@import "./utils/_mixin";
+
+body {
+  font-family: "Roboto";
+  margin: 0px;
+}
+// Link of all <a href>
+.lien {
+  text-decoration: none;
+  color: unset;
+}
+// Style of header logo + arrow
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
+  align-items: center;
+  & .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .logo {
+      width: 50%;
+    }
+  }
+  & .fa-arrow-left {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+}
+// Style of image-background
+.image-background {
+  width: 100%;
+  height: 200px;
+
+  & .image {
+    height: 250px;
+    width: inherit;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+  }
+}
+// Style of main section menu
+.menu {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 40px;
+  &__container {
+    margin: 30px 40px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    &--title {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    & .fa-heart {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+    }
+  }
+  // Style of card starters - main courses - desserts
+  & .card {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+
+    // animation card when loading page
+
+    &:nth-child(1n + 0) .card__container {
+      @include animation-card-loading(1s);
+    }
+    &__title {
+      margin: 10px 0px;
+      padding: 5px 0px;
+      width: 8%;
+      border-bottom: 3px solid #97dac1;
+    }
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      @include box-shadow($gris_1);
+      overflow: hidden;
+
+      &--animation {
+        width: 5%;
+        transition: transform 0.5s;
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+        transform: scale(0, 1);
+        transform-origin: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        & .fa-circle-check {
+          transform: scaleY(3) translateX(14px);
+          font-size: 7px;
+          color: white;
+          transition: all 0.5s;
+        }
+      }
+
+      // Style of texte inside card
+
+      &__texte {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0px 10px 10px;
+
+        &--dishes {
+          display: flex;
+          flex-direction: column;
+          line-height: 20px;
+          width: 90%;
+          & span:nth-child(1) {
+            font-weight: bold;
+            font-size: 18px;
+          }
+          & span:nth-child(2) {
+            font-size: 15px;
+          }
+        }
+        &--price {
+          align-self: flex-end;
+          transition: transform 0.5s;
+        }
+      }
+    }
+
+    // animation right div green
+    .card__container:nth-child(1n + 0):hover .card__container--animation {
+      @include animation-card;
+    }
+
+    // animation price
+
+    .card__container:nth-child(1n + 0):hover .card__container__texte--price {
+      @include animation-card-price;
+    }
+    //animation green div check
+    .card__container:hover .fa-circle-check {
+      @include animation-card-check;
+    }
+  }
+}
+
+// style + animation of button order
+
+.btn-order {
+  @include btn(30px);
+}
+
+//Style of the footer
+
+.footer {
+  background-color: $footer_background;
+
+  &__container {
+    margin: 0px 20px;
+    color: white;
+    padding: 10px 0px;
+    .title-logo {
+      font-family: "Shrikhand";
+      font-size: 17px;
+    }
+    &--utils {
+      & .fa-utensils,
+      .fa-handshake-angle {
+        margin-right: 15px;
+      }
+    }
+  }
+}

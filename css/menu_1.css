@@ -1,0 +1,202 @@
+@keyframes container {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+body {
+  font-family: "Roboto";
+  margin: 0px;
+}
+
+.lien {
+  text-decoration: none;
+  color: unset;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
+  align-items: center;
+}
+header .logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .logo-container .logo {
+  width: 50%;
+}
+header .fa-arrow-left {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.image-background {
+  width: 100%;
+  height: 200px;
+}
+.image-background .image {
+  height: 250px;
+  width: inherit;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.menu {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 40px;
+}
+.menu__container {
+  margin: 30px 40px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__container--title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.menu__container .fa-heart {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.menu .card {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+}
+.menu .card:nth-child(1n+0) .card__container {
+  animation: container 1s;
+  transform-origin: top;
+}
+.menu .card__title {
+  margin: 10px 0px;
+  padding: 5px 0px;
+  width: 8%;
+  border-bottom: 3px solid #97dac1;
+}
+.menu .card__container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 2px #f1f1f1;
+  overflow: hidden;
+}
+.menu .card__container--animation {
+  width: 5%;
+  transition: transform 0.5s;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  transform: scale(0, 1);
+  transform-origin: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.menu .card__container--animation .fa-circle-check {
+  transform: scaleY(3) translateX(14px);
+  font-size: 7px;
+  color: white;
+  transition: all 0.5s;
+}
+.menu .card__container__texte {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+}
+.menu .card__container__texte--dishes {
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  width: 90%;
+}
+.menu .card__container__texte--dishes span:nth-child(1) {
+  font-weight: bold;
+  font-size: 18px;
+}
+.menu .card__container__texte--dishes span:nth-child(2) {
+  font-size: 15px;
+}
+.menu .card__container__texte--price {
+  align-self: flex-end;
+  transition: transform 0.5s;
+}
+.menu .card .card__container:nth-child(1n+0):hover .card__container--animation {
+  background-color: #97dac1;
+  transform: scale(3, 1);
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu .card .card__container:nth-child(1n+0):hover .card__container__texte--price {
+  transform: translateX(-50px);
+}
+.menu .card .card__container:hover .fa-circle-check {
+  transform: scaleY(3) translateX(0) rotate(360deg);
+}
+
+.btn-order {
+  padding: 15px;
+  border-radius: 40px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  max-width: 200px;
+  align-self: center;
+  width: 200px;
+  margin: 30px 0px;
+  box-shadow: 1px 3px 2px #eeebeb;
+}
+.btn-order:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  box-shadow: 3px 5px 10px #a29e9e;
+  transform: translate(1px);
+}
+
+.footer {
+  background-color: #4d4c4c;
+}
+.footer__container {
+  margin: 0px 20px;
+  color: white;
+  padding: 10px 0px;
+}
+.footer__container .title-logo {
+  font-family: "Shrikhand";
+  font-size: 17px;
+}
+.footer__container--utils .fa-utensils,
+.footer__container--utils .fa-handshake-angle {
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=menu_1.css.map */
