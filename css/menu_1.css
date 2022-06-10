@@ -96,6 +96,8 @@ header .fa-arrow-left {
   padding: 5px 0px;
   width: 8%;
   border-bottom: 3px solid #97dac1;
+  font-size: 15px;
+  font-weight: normal;
 }
 .menu .card__container {
   display: flex;
