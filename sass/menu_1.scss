@@ -64,7 +64,7 @@ header {
     & .fa-heart {
       display: flex;
       align-items: center;
-      font-size: 20px;
+      font-size: 25px;
     }
   }
   // Style of card starters - main courses - desserts
@@ -145,6 +145,7 @@ header {
     // animation right div green
     .card__container:nth-child(1n + 0):hover .card__container--animation {
       @include animation-card;
+      
     }
 
     // animation price
