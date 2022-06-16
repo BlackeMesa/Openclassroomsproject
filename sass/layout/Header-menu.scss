@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
+  align-items: center;
+  & .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .logo {
+      width: 225px;
+    }
+  }
+  & .fa-arrow-left {
+    font-size: 35px;
+    padding-left: 20px;
+  }
+}

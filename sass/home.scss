@@ -1,58 +1,16 @@
 @import "./utils/variables";
 @import "./utils/mixin";
+@import "./layout/footer.scss";
+@import "./components/loader";
+@import "./components/location-input";
+@import "./components/fonctionnement-items";
+@import "./pages/home.scss";
+
 body {
   font-family: "Roboto";
   margin: 0px;
 }
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: -1000;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  animation: loader-opacity 3s;
-  opacity: 0;
-// Animation for loader
-  &::after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 10px solid #dddddd;
-    border-top-color: $color_primaire;
-    border-radius: 50%;
-    animation: loading 4s linear forwards;
-  }
-  @keyframes loader-opacity {
-    0% {
-      opacity: 1;
-      z-index: 1200;
-    }
-    25% {
-      opacity: 1;
-      z-index: 1200;
-    }
-    50% {
-      opacity: 1;
-      z-index: 1200;
-    }
-    75% {
-      opacity: 1;
-      z-index: 1200;
-    }
-    100% {
-      opacity: 0;
-      z-index: 1200;
-    }
-  }
-  @keyframes loading {
-    to {
-      transform: rotate(3turn);
-    }
-  }
-}
+
 // Link of all <a href>
 .lien {
   width: inherit;
@@ -66,24 +24,13 @@ header {
   justify-content: center;
   padding: 15px 0px;
   .logo {
-    width: 50%;
+    width: 25%;
   }
 }
 
 //style of the localisation div
 
-.localisation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  font-size: 20px;
-  background-color: $gris_1;
-  box-shadow: inset 0px 1px 3px #c8c4c4;
-  .fa-location-dot {
-    padding-right: 20px;
-  }
-}
+
 
 //style of the description div + Button + animation "Explore our restaurants"
 .description {
@@ -111,45 +58,7 @@ header {
   }
 }
 // style + animation of 3 button on main div Fonctionnement
-.fonctionnement {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  &--title {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 20px 0px;
-  }
-  &__btn {
-    display: flex;
-    background-color: $gris_2;
-    padding: 20px 20px 20px 0px;
-    border-radius: 25px;
-    align-items: center;
-    margin: 10px 0px;
-    box-shadow: 3px 3px 2px $gris_1;
-    &:hover {
-      background-color: rgba(147, 86, 220, 0.1);
-      cursor: pointer;
-    }
-    &:hover .fa-solid {
-      color: $color_primaire;
-    }
-    &--number {
-      background-color: $color_primaire;
-      padding: 6px 8px;
-      border-radius: 100%;
-      position: relative;
-      right: 10px;
-      font-size: 12px;
-      color: white;
-    }
-    & .fa-solid {
-      margin-right: 20px;
-      margin-left: 15px;
-    }
-  }
-}
+
 
 // Style of the Restaurant section 
 .restaurant {
@@ -161,22 +70,24 @@ header {
     margin: 0px 20px;
   }
   &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 20px 0px 20px;
+  display: flex;
+align-items: center;
+margin: 20px 20px 0px 20px;
+justify-content: space-between;
+flex-wrap: wrap;
   }
 }
 .fiche {
-  width: 100%;
+  width: 23%;
   height: 250px;
   background-color: white;
   border-radius: 20px;
   margin-bottom: 20px;
   @include box-shadow($gris_1);
+  position: relative;
   &__header{
     position: relative;
-    width: inherit;
+    width: 100%;
  
   &__texte{
     padding: 5px 15px;
@@ -190,7 +101,7 @@ font-weight: 600;
   }
 }
  &__image {
-    width: inherit;
+    width: 100%;
     height: 175px;
     object-fit: cover;
     border-top-left-radius: 20px;
@@ -207,6 +118,59 @@ font-weight: 600;
       margin: 10px;
     }
 // style heart + Animation heart
+    & .heart__icon{
+   position: absolute;
+bottom: 24px;
+right: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+      &__favorite{
+        width: 36px;
+height: 36px;
+position: relative;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+        &--unchecked{
+          
+transition: transform 150ms ease-in;
+position: absolute;
+font-size: 24px;
+        }
+        &--checked {
+opacity: 0;
+background: linear-gradient(190deg, #9356dc, #ff79da);
+  background-clip: border-box;
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+font-size: 24px;
+        }
+        &:hover .heart__icon__favorite--unchecked{
+          transform: scale(0);
+        }
+         &:hover .heart__icon__favorite--checked{
+          
+animation: favorite 350ms ease-out 200ms both;
+        }
+        @keyframes favorite {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+      }
+    }
     & .heart {
       margin: 15px;
       width: 25px;
@@ -246,23 +210,26 @@ font-weight: 600;
     stroke-dashoffset: 1510;
   }
 }
-// Style of the footer
-.footer {
-  background-color: $footer_background;
 
+
+@media (max-width: 998px){
+
+.fonctionnement {
+  flex-direction: column;
+}
+.fiche {
+  width: 48%;
+}
+}
+@media (max-width: 776px){
+
+.restaurant {
+ 
   &__container {
-    margin: 0px 20px;
-    color: white;
-    padding: 10px 0px;
-    .title-logo {
-      font-family: "Shrikhand";
-      font-size: 17px;
-    }
-    &--utils {
-      & .fa-utensils,
-      .fa-handshake-angle {
-        margin-right: 15px;
-      }
-    }
+    flex-direction: column;
   }
+.fiche {
+  width: 100%;
+  }
+}
 }

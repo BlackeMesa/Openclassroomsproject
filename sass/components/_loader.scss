@@ -1,0 +1,49 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: -1000;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: loader-opacity 3s;
+  opacity: 0;
+// Animation for loader
+  &::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 10px solid #dddddd;
+    border-top-color: $color_primaire;
+    border-radius: 50%;
+    animation: loading 4s linear forwards;
+  }
+  @keyframes loader-opacity {
+    0% {
+      opacity: 1;
+      z-index: 1200;
+    }
+    25% {
+      opacity: 1;
+      z-index: 1200;
+    }
+    50% {
+      opacity: 1;
+      z-index: 1200;
+    }
+    75% {
+      opacity: 1;
+      z-index: 1200;
+    }
+    100% {
+      opacity: 0;
+      z-index: 1200;
+    }
+  }
+  @keyframes loading {
+    to {
+      transform: rotate(3turn);
+    }
+  }
+}

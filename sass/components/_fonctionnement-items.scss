@@ -1,0 +1,43 @@
+.fonctionnement {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  &--title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0px;
+  }
+  &__btn {
+    display: flex;
+background-color: $gris_2;
+padding: 20px 70px 20px 0px;
+border-radius: 25px;
+align-items: center;
+margin: 10px 0px;
+box-shadow: 3px 3px 2px $gris_1;
+font-size: 17px;
+    &:hover {
+      background-color: rgba(147, 86, 220, 0.1);
+      cursor: pointer;
+    }
+    &:hover .fa-solid {
+      color: $color_primaire;
+    }
+    &--number {
+      width: 25px;
+height: 25px;
+display: flex;
+justify-content: center;
+background-color: $color_primaire;
+border-radius: 100%;
+right: 10px;
+color: white;
+position: relative;
+align-items: center;
+    }
+    & .fa-solid {
+      margin-right: 20px;
+      margin-left: 15px;
+    }
+  }
+}

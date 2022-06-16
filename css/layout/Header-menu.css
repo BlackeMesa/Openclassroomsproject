@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
+  align-items: center;
+}
+header .logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .logo-container .logo {
+  width: 225px;
+}
+header .fa-arrow-left {
+  font-size: 35px;
+  padding-left: 20px;
+}
+
+/*# sourceMappingURL=Header-menu.css.map */
