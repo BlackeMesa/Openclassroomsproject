@@ -87,6 +87,10 @@ max-height: 25px;
       width: 425px;
       height: 65px;
 
+      &:hover .card__container__texte--dishes{
+            width: 70%;
+          }
+
       &--animation {
         width: 20px;
         transition: transform 0.5s;
@@ -120,12 +124,22 @@ max-height: 25px;
           line-height: 20px;
           width: 90%;
           justify-content: space-between;
+          overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+          
           & span:nth-child(1) {
             font-weight: bold;
             font-size: 18px;
+                    overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
           }
           & span:nth-child(2) {
             font-size: 15px;
+                    overflow: hidden;
+    text-overflow: ellipsis;
+white-space: nowrap;
           }
         }
         &--price {

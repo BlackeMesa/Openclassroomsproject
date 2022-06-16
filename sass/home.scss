@@ -4,7 +4,7 @@
 @import "./components/loader";
 @import "./components/location-input";
 @import "./components/fonctionnement-items";
-@import "./pages/home.scss";
+
 
 body {
   font-family: "Roboto";
@@ -24,7 +24,7 @@ header {
   justify-content: center;
   padding: 15px 0px;
   .logo {
-    width: 25%;
+    width: 225px;
   }
 }
 

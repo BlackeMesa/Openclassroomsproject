@@ -30,7 +30,7 @@
   align-items: center;
 }
 @mixin animation-card-price {
-  transform: translateX(-50px);
+  transform: translateX(-65px);
 }
 @mixin animation-card-check  {
   transform: scale(1,3) translateX(0) rotate(360deg);
