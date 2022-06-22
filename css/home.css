@@ -126,6 +126,7 @@
   display: flex;
   justify-content: space-between;
   margin: 20px;
+  flex-wrap: wrap;
 }
 .fonctionnement--title {
   font-size: 25px;
