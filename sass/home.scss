@@ -5,7 +5,6 @@
 @import "./components/location-input";
 @import "./components/fonctionnement-items";
 
-
 body {
   font-family: "Roboto";
   margin: 0px;
@@ -27,9 +26,6 @@ header {
     width: 225px;
   }
 }
-
-//style of the localisation div
-
 
 
 //style of the description div + Button + animation "Explore our restaurants"
@@ -57,10 +53,9 @@ header {
     }
   }
 }
-// style + animation of 3 button on main div Fonctionnement
 
 
-// Style of the Restaurant section 
+// Style of the Restaurant section
 .restaurant {
   background-color: $gris_2;
   padding: 40px 0px;
@@ -70,11 +65,11 @@ header {
     margin: 0px 20px;
   }
   &__container {
-  display: flex;
-align-items: center;
-margin: 20px 20px 0px 20px;
-justify-content: space-between;
-flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    margin: 20px 20px 0px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 .fiche {
@@ -85,22 +80,22 @@ flex-wrap: wrap;
   margin-bottom: 20px;
   @include box-shadow($gris_1);
   position: relative;
-  &__header{
+  &__header {
     position: relative;
     width: 100%;
- 
-  &__texte{
-    padding: 5px 15px;
-position: absolute;
-top: 15px;
-right: 15px;
-background-color: #a8e6d6;
-border-radius: 2px;
-color: #2b987c;
-font-weight: 600;
+
+    &__texte {
+      padding: 5px 15px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #a8e6d6;
+      border-radius: 2px;
+      color: #2b987c;
+      font-weight: 600;
+    }
   }
-}
- &__image {
+  &__image {
     width: 100%;
     height: 175px;
     object-fit: cover;
@@ -117,58 +112,56 @@ font-weight: 600;
       flex-direction: column;
       margin: 10px;
     }
-// style heart + Animation heart
-    & .heart__icon{
-   position: absolute;
-bottom: 24px;
-right: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
+    // style heart + Animation heart
+    & .heart__icon {
+      position: absolute;
+      bottom: 24px;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      &__favorite{
+      &__favorite {
         width: 36px;
-height: 36px;
-position: relative;
-cursor: pointer;
-display: flex;
-justify-content: center;
-align-items: center;
-        &--unchecked{
-          
-transition: transform 150ms ease-in;
-position: absolute;
-font-size: 24px;
+        height: 36px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--unchecked {
+          transition: transform 150ms ease-in;
+          position: absolute;
+          font-size: 24px;
         }
         &--checked {
-opacity: 0;
-background: linear-gradient(190deg, #9356dc, #ff79da);
-  background-clip: border-box;
-color: transparent;
-background-clip: text;
--webkit-background-clip: text;
-font-size: 24px;
+          opacity: 0;
+          background: linear-gradient(190deg, #9356dc, #ff79da);
+          background-clip: border-box;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          font-size: 24px;
         }
-        &:hover .heart__icon__favorite--unchecked{
+        &:hover .heart__icon__favorite--unchecked {
           transform: scale(0);
         }
-         &:hover .heart__icon__favorite--checked{
-          
-animation: favorite 350ms ease-out 200ms both;
+        &:hover .heart__icon__favorite--checked {
+          animation: favorite 350ms ease-out 200ms both;
         }
         @keyframes favorite {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+          0% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          80% {
+            transform: scale(1.3);
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
       }
     }
     & .heart {
@@ -211,25 +204,21 @@ animation: favorite 350ms ease-out 200ms both;
   }
 }
 
-
-@media (max-width: 998px){
-
-.fonctionnement {
-  flex-direction: column;
-}
-.fiche {
-  width: 48%;
-}
-}
-@media (max-width: 776px){
-
-.restaurant {
- 
-  &__container {
+@media (max-width: 998px) {
+  .fonctionnement {
     flex-direction: column;
   }
-.fiche {
-  width: 100%;
+  .fiche {
+    width: 48%;
   }
 }
+@media (max-width: 776px) {
+  .restaurant {
+    &__container {
+      flex-direction: column;
+    }
+    .fiche {
+      width: 100%;
+    }
+  }
 }
